@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Chat from 'components/Chat';
+import Container from 'react-bootstrap/Container';
+import useStyles from 'styles';
+import Content from 'ui/Content';
+import PageTitle from 'ui/PageTitle';
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className={classes.rootWrapper}>
+      <PageTitle>
+        <h5>1 day chat App</h5>
+        <p>All messages will be deleted at every 00:00 UTC</p>
+      </PageTitle>
+      <Content>
+        <Chat />
+      </Content>
+    </Container>
   );
 }
 
